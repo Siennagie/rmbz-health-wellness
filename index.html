@@ -1,1 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMBZ Health and Wellness | Premium Dietary Supplements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --accent-gold: #ffc107;
+            --light-green: #e8f5e9;
+            --white: #ffffff;
+            --light-gray: #f5f7fa;
+            --dark-gray: #333333;
+            --text-gray: #666666;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-green);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-green);
+            color: var(--secondary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-green);
+            color: var(--white);
+        }
+
+        .price-btn {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .price-btn:hover {
+            background-color: var(--secondary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            display: block;
+            margin-top: -5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-green);
+        }
+
+        .phone-number {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(76, 175, 80, 0.7)), url('Hero_Picture_Final.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 0 100px;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            width: 50%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--white);
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .featured-products {
+            background-color: var(--light-gray);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-img {
+            height: 250px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: var(--light-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            min-height: 3.2rem;
+            line-height: 1.2;
+        }
+
+        .product-specs {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.3;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #ff5722;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .product-buttons {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .product-btn {
+            align-self: flex-start;
+        }
+
+        .about-snippet {
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--light-green);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Doctor Section */
+        .doctor-section {
+            background-color: var(--light-gray);
+        }
+
+        .doctor-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .doctor-image {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--light-green);
+        }
+
+        .doctor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Product Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+
+        .modal-product {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .modal-product-img {
+            height: 400px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: var(--light-green);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .quantity-selector button {
+            background-color: var(--light-gray);
+            border: none;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 0 10px;
+        }
+
+        /* Shopping Cart */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background-color: var(--white);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1500;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-items {
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-right: 15px;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-price {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1400;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Checkout Form */
+        .checkout-form {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chat-btn {
+            background-color: var(--secondary-green);
+            color: var(--white);
+            padding: 15px 25px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .chat-btn:hover {
+            background-color: var(--primary-green);
+            transform: scale(1.05);
+        }
+
+        .chat-btn i {
+            margin-right: 10px;
+        }
+
+        .chat-box {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            display: none;
+        }
+
+        .chat-header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            color: var(--white);
+            margin-bottom: 0;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background-color: var(--light-green);
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background-color: var(--secondary-green);
+            color: var(--white);
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            margin-right: 10px;
+        }
+
+        .send-btn {
+            background-color: var(--secondary-green);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+        }
+
+        /* Admin Dashboard */
+        .admin-login {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-dashboard {
+            padding: 100px 20px 50px;
+        }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .data-table {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .table-header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 15px 20px;
+        }
+
+        .table-content {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--light-green);
+            font-weight: 600;
+        }
+
+        @media (max-width: 992px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-content {
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-container, .doctor-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-product {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .chat-box {
+                width: 300px;
+            }
+            
+            .chat-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .product-buttons {
+                flex-direction: column;
+            }
+            
+            .price-btn {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">RMBZ <span>Health</span>
+                <span class="logo-sub">and Wellness</span>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#bulk-orders">Bulk Orders</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="phone-number">09685485465</a></li>
+                    <li><a href="#" class="btn" id="cart-btn">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Premium Health Supplements</h1>
+                <p>Scientifically formulated to enhance your vitality, energy, and overall well-being.</p>
+                <a href="#products" class="btn">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="featured-products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>High-quality dietary supplements for your health and wellness</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="about-snippet">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- Image will be set via JavaScript -->
+                </div>
+                <div class="about-info">
+                    <h2>About RMBZ Health and Wellness</h2>
+                    <p>"It is my advocacy to scientifically formulate a range of supplements designed to enhance your vitality, energy, and overall well-being."</p>
+                    <p>- Dr. Renz Bautista</p>
+                    <a href="#about" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product" id="modal-product-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">₱0.00</span>
+            </div>
+            <button class="btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Form -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Full Name *</label>
+                    <input type="text" id="customer-name" name="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email Address *</label>
+                    <input type="email" id="customer-email" name="customer-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Phone Number *</label>
+                    <input type="tel" id="customer-phone" name="customer-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Shipping Address *</label>
+                    <textarea id="customer-address" name="customer-address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" name="payment-method">
+                        <option value="cod">Cash on Delivery</option>
+                        <option value="bank">Bank Transfer</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bulk Orders & Distributorship Page -->
+    <section id="bulk-orders" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bulk Orders & Become a Distributor</h2>
+                <p>Partner with us to bring premium health supplements to more people</p>
+            </div>
+            <div class="about-container">
+                <div class="about-info">
+                    <h3>Benefits of Becoming a Distributor</h3>
+                    <ul class="benefits-list">
+                        <li>Competitive wholesale pricing</li>
+                        <li>Marketing materials and support</li>
+                        <li>Exclusive product training</li>
+                        <li>Priority access to new products</li>
+                        <li>Business growth opportunities</li>
+                    </ul>
+                    <p>Join our network of health advocates and build a profitable business while promoting wellness in your community.</p>
+                </div>
+                <div class="contact-form">
+                    <form id="bulk-order-form">
+                        <div class="form-group">
+                            <label for="bulk-name">Full Name *</label>
+                            <input type="text" id="bulk-name" name="bulk-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bulk-company">Company Name</label>
+                            <input type="text" id="bulk-company" name="bulk-company">
+                        </div>
+                        <div class="form-group">
+                            <label for="bulk-email">Email Address *</label>
+                            <input type="email" id="bulk-email" name="bulk-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bulk-phone">Phone Number *</label>
+                            <input type="tel" id="bulk-phone" name="bulk-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry-type">Inquiry Type *</label>
+                            <select id="inquiry-type" name="inquiry-type" required>
+                                <option value="">Select an option</option>
+                                <option value="bulk">Bulk Order Inquiry</option>
+                                <option value="distributor">Distributorship Application</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bulk-message">Message</label>
+                            <textarea id="bulk-message" name="bulk-message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about" class="doctor-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Our commitment to quality and wellness</p>
+            </div>
+            <div class="doctor-container">
+                <div class="doctor-image">
+                    <img src="drbautista.jpg" alt="Dr. Rhenz Bautista">
+                </div>
+                <div class="doctor-info">
+                    <h2>Dr. Rhenz Bautista</h2>
+                    <p>With over 20 years of dedicated experience in IV Nutritional Therapy, Dr. Rhenz Bautista is a pioneer in the field of wellness medicine. His extensive expertise and compassionate approach have helped thousands of patients achieve optimal health and vitality.</p>
+                    <p>Dr. Bautista is deeply committed to making lives healthier and more vibrant through his personal scientific formulation of supplements and drinks. He believes in addressing the root causes of health issues by creating these products to ensure long-lasting wellness for everyone.</p>
+                    <p>His dedication to excellence sets the standard for health and wellness for everyone, anywhere in the world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our wellness team</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> 09685485465</p>
+                        <p><i class="fas fa-envelope"></i> info@rmbzhealth.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+                    <h3>Why Choose RMBZ Health and Wellness?</h3>
+                    <ul class="benefits-list">
+                        <li>Scientifically formulated supplements</li>
+                        <li>Premium quality ingredients</li>
+                        <li>Doctor-developed formulations</li>
+                        <li>Affordable wellness solutions</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" name="contact-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" name="contact-email">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="contact-subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="contact-message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-btn">
+            <i class="fas fa-comment"></i> Chat with us
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <h3>CHAT WITH US</h3>
+                <button class="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    Hello! Welcome to RMBZ Health and Wellness. How can we help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>RMBZ Health and Wellness</h3>
+                    <p>Premium dietary supplements for vitality, energy, and overall well-being. Experience the difference with scientifically formulated health products.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#bulk-orders">Bulk Orders</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Products</h3>
+                    <ul>
+                        <li><a href="#">Min-C</a></li>
+                        <li><a href="#">Glutamin</a></li>
+                        <li><a href="#">Paratox</a></li>
+                        <li><a href="#">Supermin</a></li>
+                        <li><a href="#">Cafemin</a></li>
+                        <li><a href="#">Nutramin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 09685485465</li>
+                        <li><i class="fas fa-envelope"></i> info@rmbzhealth.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 RMBZ Health and Wellness. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Dashboard (hidden by default) -->
+    <div id="admin-dashboard" style="display: none;">
+        <div class="admin-dashboard">
+            <div class="container">
+                <h1>Admin Dashboard</h1>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-visitors">0</div>
+                        <div class="stat-label">Total Website Visitors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-orders">0</div>
+                        <div class="stat-label">Total Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-distributors">0</div>
+                        <div class="stat-label">Distributor Applications</div>
+                    </div>
+                </div>
+                
+                <div class="data-table">
+                    <div class="table-header">
+                        <h3>Order Details</h3>
+                    </div>
+                    <div class="table-content">
+                        <table id="orders-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Products</th>
+                                    <th>Total</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table-body">
+                                <!-- Orders will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="data-table" style="margin-top: 30px;">
+                    <div class="table-header">
+                        <h3>Distributor Applications</h3>
+                    </div>
+                    <div class="table-content">
+                        <table id="distributors-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Company</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="distributors-table-body">
+                                <!-- Distributors will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product Data
+        const products = [
+            {
+                id: 1,
+                name: "Min-C - Calcium Ascorbate with Zeolite",
+                image: "Min_C_Final.png",
+                specs: "500mg, 100 Capsules",
+                description: "A powerful antioxidant supplement combining Calcium Ascorbate with Zeolite to support immune function and overall wellness. This formulation helps neutralize free radicals and promotes detoxification.",
+                price: 899,
+                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+            },
+            {
+                id: 2,
+                name: "Glutamin with Vitamins C & E",
+                image: "glutamin_final.png",
+                specs: "900mg/Capsule",
+                description: "A comprehensive antioxidant formula featuring Glutathione with Vitamin C, E, Alpha Lipoic Acid, and other essential nutrients. Supports cellular health, immune function, and detoxification processes.",
+                price: 1299,
+                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+            },
+            {
+                id: 3,
+                name: "Paratox Herbal Capsules",
+                image: "paratox_final.png",
+                specs: "Dietary Supplement",
+                description: "A specialized herbal formulation designed to support the body's natural detoxification processes. Helps eliminate toxins and promotes overall wellness through natural ingredients.",
+                price: 799,
+                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+            },
+            {
+                id: 4,
+                name: "Supermin - Keep Plant Powder",
+                image: "supermin_final.png",
+                specs: "400mg Capsule, 30 Capsules",
+                description: "A premium plant-based supplement packed with essential minerals and nutrients. Formulated to support vitality, energy levels, and overall well-being with natural ingredients.",
+                price: 999,
+                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+            },
+            {
+                id: 5,
+                name: "Cafemin Instant Coffee Drink Mix",
+                image: "cafemin_final.png",
+                specs: "Instant Coffee Drink Mix",
+                description: "A unique coffee blend enhanced with health-promoting ingredients. Enjoy your daily coffee while getting the benefits of added nutrients for sustained energy and wellness.",
+                price: 499,
+                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+            },
+            {
+                id: 6,
+                name: "Nutramin with Vitamin C",
+                image: "nutramin_final.png",
+                specs: "Dietary Supplement",
+                description: "A nutrient-rich supplement combining essential vitamins and minerals with Vitamin C. Supports immune function, energy production, and overall health maintenance.",
+                price: 699,
+                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+            }
+        ];
+
+        // Initialize the website
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize product grid
+            initializeProductGrid();
+            
+            // Initialize cart
+            initializeCart();
+            
+            // Initialize admin dashboard
+            initializeAdminDashboard();
+            
+            // Set about image
+            document.querySelector('.about-image').style.backgroundImage = "url('Hero_Picture_Final.png')";
+            
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+            
+            // Chat Widget Functionality
+            const chatBtn = document.querySelector('.chat-btn');
+            const chatBox = document.querySelector('.chat-box');
+            const closeChat = document.querySelector('.close-chat');
+            const sendBtn = document.querySelector('.send-btn');
+            const chatInput = document.querySelector('.chat-input input');
+            const chatBody = document.querySelector('.chat-body');
+            
+            chatBtn.addEventListener('click', () => {
+                chatBox.style.display = chatBox.style.display === 'block' ? 'none' : 'block';
+            });
+            
+            closeChat.addEventListener('click', () => {
+                chatBox.style.display = 'none';
+            });
+            
+            sendBtn.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    const userMessage = document.createElement('div');
+                    userMessage.classList.add('chat-message', 'user-message');
+                    userMessage.textContent = message;
+                    chatBody.appendChild(userMessage);
+                    
+                    chatInput.value = '';
+                    
+                    // Simulate bot response after a delay
+                    setTimeout(() => {
+                        const botMessage = document.createElement('div');
+                        botMessage.classList.add('chat-message', 'bot-message');
+                        botMessage.textContent = "Thank you for your message. Our wellness specialist will get back to you shortly.";
+                        chatBody.appendChild(botMessage);
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    }, 1000);
+                    
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }
+            }
+            
+            // Form Submissions
+            document.getElementById('checkout-form').addEventListener('submit', handleCheckout);
+            document.getElementById('bulk-order-form').addEventListener('submit', handleBulkOrder);
+            document.getElementById('contact-form').addEventListener('submit', handleContact);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        document.querySelector('nav').classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Initialize Product Grid
+        function initializeProductGrid() {
+            const productsGrid = document.querySelector('.products-grid');
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+                productCard.innerHTML = `
+                    <div class="product-img" style="background-image: url('${product.image}')"></div>
+                    <div class="product-content">
+                        <h3>${product.name}</h3>
+                        <div class="product-specs">${product.specs}</div>
+                        <p>${product.description.substring(0, 100)}...</p>
+                        <div class="disclaimer">${product.disclaimer}</div>
+                        <div class="product-buttons">
+                            <button class="btn product-btn view-details" data-id="${product.id}">View Details</button>
+                            <button class="price-btn">₱${product.price}</button>
+                        </div>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to view details buttons
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    openProductModal(productId);
+                });
+            });
+        }
+
+        // Open Product Modal
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const modalContent = document.getElementById('modal-product-content');
+            modalContent.innerHTML = `
+                <div class="modal-product-img" style="background-image: url('${product.image}')"></div>
+                <div class="modal-product-info">
+                    <h3>${product.name}</h3>
+                    <div class="product-specs">${product.specs}</div>
+                    <p>${product.description}</p>
+                    <div class="disclaimer">${product.disclaimer}</div>
+                    <div class="quantity-selector">
+                        <button class="decrease-qty">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button class="increase-qty">+</button>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        <button class="btn btn-outline bulk-order" data-id="${product.id}">Bulk Order with Discount</button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('product-modal').style.display = 'block';
+            
+            // Add event listeners for quantity selector
+            const decreaseBtn = modalContent.querySelector('.decrease-qty');
+            const increaseBtn = modalContent.querySelector('.increase-qty');
+            const quantityInput = modalContent.querySelector('.quantity-input');
+            
+            decreaseBtn.addEventListener('click', () => {
+                if (parseInt(quantityInput.value) > 1) {
+                    quantityInput.value = parseInt(quantityInput.value) - 1;
+                }
+            });
+            
+            increaseBtn.addEventListener('click', () => {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            });
+            
+            // Add event listener for add to cart
+            modalContent.querySelector('.add-to-cart').addEventListener('click', function() {
+                const quantity = parseInt(quantityInput.value);
+                addToCart(productId, quantity);
+                document.getElementById('product-modal').style.display = 'none';
+            });
+            
+            // Add event listener for bulk order
+            modalContent.querySelector('.bulk-order').addEventListener('click', function() {
+                document.getElementById('product-modal').style.display = 'none';
+                window.location.href = '#bulk-orders';
+            });
+        }
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('rmbz_cart')) || [];
+
+        function initializeCart() {
+            updateCartCount();
+            
+            // Cart button event listeners
+            document.getElementById('cart-btn').addEventListener('click', openCart);
+            document.querySelector('.close-cart').addEventListener('click', closeCart);
+            document.getElementById('cart-overlay').addEventListener('click', closeCart);
+            document.getElementById('checkout-btn').addEventListener('click', openCheckout);
+        }
+
+        function addToCart(productId, quantity = 1) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+            
+            localStorage.setItem('rmbz_cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartDisplay();
+            
+            // Show confirmation
+            alert(`${quantity} ${product.name} added to cart!`);
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Your cart is empty</p>';
+                cartTotal.textContent = '₱0.00';
+                return;
+            }
+            
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <div class="cart-item-img" style="background-image: url('${item.image}')"></div>
+                    <div class="cart-item-details">
+                        <h4>${item.name}</h4>
+                        <div class="quantity-selector">
+                            <button class="decrease-cart-qty" data-id="${item.id}">-</button>
+                            <input type="number" value="${item.quantity}" min="1" class="cart-quantity-input" data-id="${item.id}">
+                            <button class="increase-cart-qty" data-id="${item.id}">+</button>
+                        </div>
+                        <div class="cart-item-price">₱${itemTotal.toFixed(2)}</div>
+                    </div>
+                    <button class="remove-from-cart" data-id="${item.id}">&times;</button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = `₱${total.toFixed(2)}`;
+            
+            // Add event listeners for cart items
+            document.querySelectorAll('.decrease-cart-qty').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    updateCartItemQuantity(id, -1);
+                });
+            });
+            
+            document.querySelectorAll('.increase-cart-qty').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    updateCartItemQuantity(id, 1);
+                });
+            });
+            
+            document.querySelectorAll('.cart-quantity-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    const quantity = parseInt(this.value);
+                    if (quantity > 0) {
+                        setCartItemQuantity(id, quantity);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.remove-from-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    removeFromCart(id);
+                });
+            });
+        }
+
+        function updateCartItemQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity < 1) {
+                    removeFromCart(productId);
+                } else {
+                    localStorage.setItem('rmbz_cart', JSON.stringify(cart));
+                    updateCartCount();
+                    updateCartDisplay();
+                }
+            }
+        }
+
+        function setCartItemQuantity(productId, quantity) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity = quantity;
+                localStorage.setItem('rmbz_cart', JSON.stringify(cart));
+                updateCartCount();
+                updateCartDisplay();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('rmbz_cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        function openCart() {
+            updateCartDisplay();
+            document.getElementById('cart-sidebar').classList.add('active');
+            document.getElementById('cart-overlay').classList.add('active');
+        }
+
+        function closeCart() {
+            document.getElementById('cart-sidebar').classList.remove('active');
+            document.getElementById('cart-overlay').classList.remove('active');
+        }
+
+        function openCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            closeCart();
+            document.getElementById('checkout-modal').style.display = 'block';
+        }
+
+        // Form Handlers
+        function handleCheckout(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const order = {
+                name: formData.get('customer-name'),
+                email: formData.get('customer-email'),
+                phone: formData.get('customer-phone'),
+                address: formData.get('customer-address'),
+                payment: formData.get('payment-method'),
+                products: [...cart],
+                total: cart.reduce((total, item) => total + (item.price * item.quantity), 0),
+                date: new Date().toISOString()
+            };
+            
+            // Save order to localStorage
+            const orders = JSON.parse(localStorage.getItem('rmbz_orders')) || [];
+            orders.push(order);
+            localStorage.setItem('rmbz_orders', JSON.stringify(orders));
+            
+            // Update admin stats
+            updateAdminStats();
+            
+            // Clear cart
+            cart = [];
+            localStorage.setItem('rmbz_cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // Close modal and show confirmation
+            document.getElementById('checkout-modal').style.display = 'none';
+            alert('Thank you for your order! We will contact you shortly to confirm details and arrange payment/shipping.');
+            
+            // Reset form
+            e.target.reset();
+        }
+
+        function handleBulkOrder(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const inquiry = {
+                name: formData.get('bulk-name'),
+                company: formData.get('bulk-company'),
+                email: formData.get('bulk-email'),
+                phone: formData.get('bulk-phone'),
+                type: formData.get('inquiry-type'),
+                message: formData.get('bulk-message'),
+                date: new Date().toISOString()
+            };
+            
+            // Save inquiry to localStorage
+            const inquiries = JSON.parse(localStorage.getItem('rmbz_inquiries')) || [];
+            inquiries.push(inquiry);
+            localStorage.setItem('rmbz_inquiries', JSON.stringify(inquiries));
+            
+            // Update admin stats
+            updateAdminStats();
+            
+            // Show confirmation
+            alert('Thank you for your inquiry! We will contact you shortly to discuss bulk ordering or distributorship opportunities.');
+            
+            // Reset form
+            e.target.reset();
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const contact = {
+                name: formData.get('contact-name'),
+                email: formData.get('contact-email'),
+                subject: formData.get('contact-subject'),
+                message: formData.get('contact-message'),
+                date: new Date().toISOString()
+            };
+            
+            // In a real application, you would send this to a server
+            // For now, we'll just show a confirmation
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            e.target.reset();
+        }
+
+        // Admin Dashboard
+        function initializeAdminDashboard() {
+            // Check if we're on the admin page
+            if (window.location.hash === '#admin') {
+                // Show login form (in a real app, this would have proper authentication)
+                showAdminDashboard();
+            }
+            
+            // Update stats
+            updateAdminStats();
+        }
+
+        function showAdminDashboard() {
+            document.getElementById('admin-dashboard').style.display = 'block';
+            // Hide the main content
+            document.querySelector('header').style.display = 'none';
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.querySelector('footer').style.display = 'none';
+            document.querySelector('.chat-widget').style.display = 'none';
+        }
+
+        function updateAdminStats() {
+            // Update visitor count (simplified - in a real app, this would come from analytics)
+            let visitors = parseInt(localStorage.getItem('rmbz_visitors')) || 0;
+            visitors++;
+            localStorage.setItem('rmbz_visitors', visitors.toString());
+            document.getElementById('total-visitors').textContent = visitors;
+            
+            // Update order count
+            const orders = JSON.parse(localStorage.getItem('rmbz_orders')) || [];
+            document.getElementById('total-orders').textContent = orders.length;
+            
+            // Update distributor count
+            const inquiries = JSON.parse(localStorage.getItem('rmbz_inquiries')) || [];
+            const distributorInquiries = inquiries.filter(i => i.type === 'distributor');
+            document.getElementById('total-distributors').textContent = distributorInquiries.length;
+            
+            // Update orders table
+            const ordersTableBody = document.getElementById('orders-table-body');
+            ordersTableBody.innerHTML = '';
+            
+            orders.forEach(order => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${order.name}</td>
+                    <td>${order.email}</td>
+                    <td>${order.phone}</td>
+                    <td>${order.products.map(p => p.name).join(', ')}</td>
+                    <td>₱${order.total.toFixed(2)}</td>
+                    <td>${new Date(order.date).toLocaleDateString()}</td>
+                `;
+                ordersTableBody.appendChild(row);
+            });
+            
+            // Update distributors table
+            const distributorsTableBody = document.getElementById('distributors-table-body');
+            distributorsTableBody.innerHTML = '';
+            
+            distributorInquiries.forEach(inquiry => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${inquiry.name}</td>
+                    <td>${inquiry.company || 'N/A'}</td>
+                    <td>${inquiry.email}</td>
+                    <td>${inquiry.phone}</td>
+                    <td>${inquiry.type === 'distributor' ? 'Distributorship' : 'Bulk Order'}</td>
+                    <td>${new Date(inquiry.date).toLocaleDateString()}</td>
+                `;
+                distributorsTableBody.appendChild(row);
+            });
+        }
+
+        // Close modals when clicking the X
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
