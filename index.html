@@ -193,7 +193,7 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(76, 175, 80, 0.7)), url('Hero_Picture_Final.png');
+            background: url('Hero_Picture_Final.png');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -202,10 +202,23 @@
             display: flex;
             align-items: center;
             min-height: 80vh;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(46, 125, 50, 0.3);
         }
 
         .hero-content {
             width: 50%;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -279,11 +292,8 @@
             line-height: 1.3;
         }
 
-        .disclaimer {
-            font-size: 0.8rem;
-            color: #ff5722;
-            margin-top: 10px;
-            font-weight: 500;
+        .product-description {
+            flex-grow: 1;
         }
 
         .product-buttons {
@@ -295,31 +305,6 @@
             align-self: flex-start;
         }
 
-        .about-snippet {
-            background-color: var(--white);
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            height: 400px;
-            border-radius: 10px;
-            overflow: hidden;
-            background-color: var(--light-green);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Doctor Section */
         .doctor-section {
             background-color: var(--light-gray);
         }
@@ -342,6 +327,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 30%;
         }
 
         /* Product Detail Modal */
@@ -811,7 +797,7 @@
                 font-size: 2.5rem;
             }
             
-            .about-container, .doctor-container {
+            .doctor-container {
                 grid-template-columns: 1fr;
             }
             
@@ -888,7 +874,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#bulk-orders">Bulk Orders</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#doctor">The Doctor</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#" class="phone-number">09685485465</a></li>
                     <li><a href="#" class="btn" id="cart-btn">Cart (<span id="cart-count">0</span>)</a></li>
@@ -900,7 +886,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Premium Health Supplements</h1>
+                <h1>Premium Health Drinks and Supplements</h1>
                 <p>Scientifically formulated to enhance your vitality, energy, and overall well-being.</p>
                 <a href="#products" class="btn">Order Now</a>
             </div>
@@ -919,17 +905,22 @@
         </div>
     </section>
 
-    <section class="about-snippet">
+    <!-- The Doctor Section -->
+    <section id="doctor" class="doctor-section">
         <div class="container">
-            <div class="about-container">
-                <div class="about-image">
-                    <!-- Image will be set via JavaScript -->
+            <div class="section-title">
+                <h2>The Doctor behind RMBZ Health and Wellness</h2>
+                <p>Our commitment to quality and wellness</p>
+            </div>
+            <div class="doctor-container">
+                <div class="doctor-image">
+                    <img src="drbautista.jpg" alt="Dr. Rhenz Bautista">
                 </div>
-                <div class="about-info">
-                    <h2>About RMBZ Health and Wellness</h2>
-                    <p>"It is my advocacy to scientifically formulate a range of supplements designed to enhance your vitality, energy, and overall well-being."</p>
-                    <p>- Dr. Renz Bautista</p>
-                    <a href="#about" class="btn">Learn More</a>
+                <div class="doctor-info">
+                    <h2>Dr. Rhenz Bautista</h2>
+                    <p>With over 20 years of dedicated experience in IV Nutritional Therapy, Dr. Rhenz Bautista is a pioneer in the field of wellness medicine. His extensive expertise and compassionate approach have helped thousands of patients achieve optimal health and vitality.</p>
+                    <p>Dr. Bautista is deeply committed to making lives healthier and more vibrant through his personal scientific formulation of supplements and drinks. He believes in addressing the root causes of health issues by creating these products to ensure long-lasting wellness for everyone.</p>
+                    <p>His dedication to excellence sets the standard for health and wellness for everyone, anywhere in the world.</p>
                 </div>
             </div>
         </div>
@@ -1005,8 +996,8 @@
                 <h2>Bulk Orders & Become a Distributor</h2>
                 <p>Partner with us to bring premium health supplements to more people</p>
             </div>
-            <div class="about-container">
-                <div class="about-info">
+            <div class="doctor-container">
+                <div class="doctor-info">
                     <h3>Benefits of Becoming a Distributor</h3>
                     <ul class="benefits-list">
                         <li>Competitive wholesale pricing</li>
@@ -1054,27 +1045,6 @@
         </div>
     </section>
 
-    <!-- About Us Page -->
-    <section id="about" class="doctor-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-                <p>Our commitment to quality and wellness</p>
-            </div>
-            <div class="doctor-container">
-                <div class="doctor-image">
-                    <img src="drbautista.jpg" alt="Dr. Rhenz Bautista">
-                </div>
-                <div class="doctor-info">
-                    <h2>Dr. Rhenz Bautista</h2>
-                    <p>With over 20 years of dedicated experience in IV Nutritional Therapy, Dr. Rhenz Bautista is a pioneer in the field of wellness medicine. His extensive expertise and compassionate approach have helped thousands of patients achieve optimal health and vitality.</p>
-                    <p>Dr. Bautista is deeply committed to making lives healthier and more vibrant through his personal scientific formulation of supplements and drinks. He believes in addressing the root causes of health issues by creating these products to ensure long-lasting wellness for everyone.</p>
-                    <p>His dedication to excellence sets the standard for health and wellness for everyone, anywhere in the world.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Page -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1082,8 +1052,8 @@
                 <h2>Contact Us</h2>
                 <p>Get in touch with our wellness team</p>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
+            <div class="doctor-container">
+                <div class="doctor-info">
                     <h3>Get In Touch</h3>
                     <div class="contact-details">
                         <p><i class="fas fa-phone"></i> 09685485465</p>
@@ -1107,6 +1077,10 @@
                         <div class="form-group">
                             <label for="contact-email">Email Address</label>
                             <input type="email" id="contact-email" name="contact-email">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Contact Number</label>
+                            <input type="tel" id="contact-phone" name="contact-phone">
                         </div>
                         <div class="form-group">
                             <label for="contact-subject">Subject</label>
@@ -1163,7 +1137,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#bulk-orders">Bulk Orders</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#doctor">The Doctor</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1193,75 +1167,6 @@
         </div>
     </footer>
 
-    <!-- Admin Dashboard (hidden by default) -->
-    <div id="admin-dashboard" style="display: none;">
-        <div class="admin-dashboard">
-            <div class="container">
-                <h1>Admin Dashboard</h1>
-                <div class="dashboard-stats">
-                    <div class="stat-card">
-                        <div class="stat-number" id="total-visitors">0</div>
-                        <div class="stat-label">Total Website Visitors</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="total-orders">0</div>
-                        <div class="stat-label">Total Orders</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" id="total-distributors">0</div>
-                        <div class="stat-label">Distributor Applications</div>
-                    </div>
-                </div>
-                
-                <div class="data-table">
-                    <div class="table-header">
-                        <h3>Order Details</h3>
-                    </div>
-                    <div class="table-content">
-                        <table id="orders-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Products</th>
-                                    <th>Total</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody id="orders-table-body">
-                                <!-- Orders will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-                <div class="data-table" style="margin-top: 30px;">
-                    <div class="table-header">
-                        <h3>Distributor Applications</h3>
-                    </div>
-                    <div class="table-content">
-                        <table id="distributors-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Company</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Type</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody id="distributors-table-body">
-                                <!-- Distributors will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         // Product Data
         const products = [
@@ -1271,8 +1176,7 @@
                 image: "Min_C_Final.png",
                 specs: "500mg, 100 Capsules",
                 description: "A powerful antioxidant supplement combining Calcium Ascorbate with Zeolite to support immune function and overall wellness. This formulation helps neutralize free radicals and promotes detoxification.",
-                price: 899,
-                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+                price: 899
             },
             {
                 id: 2,
@@ -1280,8 +1184,7 @@
                 image: "glutamin_final.png",
                 specs: "900mg/Capsule",
                 description: "A comprehensive antioxidant formula featuring Glutathione with Vitamin C, E, Alpha Lipoic Acid, and other essential nutrients. Supports cellular health, immune function, and detoxification processes.",
-                price: 1299,
-                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+                price: 1299
             },
             {
                 id: 3,
@@ -1289,8 +1192,7 @@
                 image: "paratox_final.png",
                 specs: "Dietary Supplement",
                 description: "A specialized herbal formulation designed to support the body's natural detoxification processes. Helps eliminate toxins and promotes overall wellness through natural ingredients.",
-                price: 799,
-                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+                price: 799
             },
             {
                 id: 4,
@@ -1298,8 +1200,7 @@
                 image: "supermin_final.png",
                 specs: "400mg Capsule, 30 Capsules",
                 description: "A premium plant-based supplement packed with essential minerals and nutrients. Formulated to support vitality, energy levels, and overall well-being with natural ingredients.",
-                price: 999,
-                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+                price: 999
             },
             {
                 id: 5,
@@ -1307,8 +1208,7 @@
                 image: "cafemin_final.png",
                 specs: "Instant Coffee Drink Mix",
                 description: "A unique coffee blend enhanced with health-promoting ingredients. Enjoy your daily coffee while getting the benefits of added nutrients for sustained energy and wellness.",
-                price: 499,
-                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+                price: 499
             },
             {
                 id: 6,
@@ -1316,8 +1216,7 @@
                 image: "nutramin_final.png",
                 specs: "Dietary Supplement",
                 description: "A nutrient-rich supplement combining essential vitamins and minerals with Vitamin C. Supports immune function, energy production, and overall health maintenance.",
-                price: 699,
-                disclaimer: "NO APPROVED THERAPEUTIC CLAIMS"
+                price: 699
             }
         ];
 
@@ -1328,12 +1227,6 @@
             
             // Initialize cart
             initializeCart();
-            
-            // Initialize admin dashboard
-            initializeAdminDashboard();
-            
-            // Set about image
-            document.querySelector('.about-image').style.backgroundImage = "url('Hero_Picture_Final.png')";
             
             // Mobile Menu Toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1428,8 +1321,9 @@
                     <div class="product-content">
                         <h3>${product.name}</h3>
                         <div class="product-specs">${product.specs}</div>
-                        <p>${product.description.substring(0, 100)}...</p>
-                        <div class="disclaimer">${product.disclaimer}</div>
+                        <div class="product-description">
+                            <p>${product.description}</p>
+                        </div>
                         <div class="product-buttons">
                             <button class="btn product-btn view-details" data-id="${product.id}">View Details</button>
                             <button class="price-btn">₱${product.price}</button>
@@ -1460,7 +1354,6 @@
                     <h3>${product.name}</h3>
                     <div class="product-specs">${product.specs}</div>
                     <p>${product.description}</p>
-                    <div class="disclaimer">${product.disclaimer}</div>
                     <div class="quantity-selector">
                         <button class="decrease-qty">-</button>
                         <input type="number" value="1" min="1" class="quantity-input">
@@ -1693,9 +1586,6 @@
             orders.push(order);
             localStorage.setItem('rmbz_orders', JSON.stringify(orders));
             
-            // Update admin stats
-            updateAdminStats();
-            
             // Clear cart
             cart = [];
             localStorage.setItem('rmbz_cart', JSON.stringify(cart));
@@ -1729,9 +1619,6 @@
             inquiries.push(inquiry);
             localStorage.setItem('rmbz_inquiries', JSON.stringify(inquiries));
             
-            // Update admin stats
-            updateAdminStats();
-            
             // Show confirmation
             alert('Thank you for your inquiry! We will contact you shortly to discuss bulk ordering or distributorship opportunities.');
             
@@ -1747,6 +1634,7 @@
             const contact = {
                 name: formData.get('contact-name'),
                 email: formData.get('contact-email'),
+                phone: formData.get('contact-phone'),
                 subject: formData.get('contact-subject'),
                 message: formData.get('contact-message'),
                 date: new Date().toISOString()
@@ -1758,80 +1646,6 @@
             
             // Reset form
             e.target.reset();
-        }
-
-        // Admin Dashboard
-        function initializeAdminDashboard() {
-            // Check if we're on the admin page
-            if (window.location.hash === '#admin') {
-                // Show login form (in a real app, this would have proper authentication)
-                showAdminDashboard();
-            }
-            
-            // Update stats
-            updateAdminStats();
-        }
-
-        function showAdminDashboard() {
-            document.getElementById('admin-dashboard').style.display = 'block';
-            // Hide the main content
-            document.querySelector('header').style.display = 'none';
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.querySelector('footer').style.display = 'none';
-            document.querySelector('.chat-widget').style.display = 'none';
-        }
-
-        function updateAdminStats() {
-            // Update visitor count (simplified - in a real app, this would come from analytics)
-            let visitors = parseInt(localStorage.getItem('rmbz_visitors')) || 0;
-            visitors++;
-            localStorage.setItem('rmbz_visitors', visitors.toString());
-            document.getElementById('total-visitors').textContent = visitors;
-            
-            // Update order count
-            const orders = JSON.parse(localStorage.getItem('rmbz_orders')) || [];
-            document.getElementById('total-orders').textContent = orders.length;
-            
-            // Update distributor count
-            const inquiries = JSON.parse(localStorage.getItem('rmbz_inquiries')) || [];
-            const distributorInquiries = inquiries.filter(i => i.type === 'distributor');
-            document.getElementById('total-distributors').textContent = distributorInquiries.length;
-            
-            // Update orders table
-            const ordersTableBody = document.getElementById('orders-table-body');
-            ordersTableBody.innerHTML = '';
-            
-            orders.forEach(order => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${order.name}</td>
-                    <td>${order.email}</td>
-                    <td>${order.phone}</td>
-                    <td>${order.products.map(p => p.name).join(', ')}</td>
-                    <td>₱${order.total.toFixed(2)}</td>
-                    <td>${new Date(order.date).toLocaleDateString()}</td>
-                `;
-                ordersTableBody.appendChild(row);
-            });
-            
-            // Update distributors table
-            const distributorsTableBody = document.getElementById('distributors-table-body');
-            distributorsTableBody.innerHTML = '';
-            
-            distributorInquiries.forEach(inquiry => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${inquiry.name}</td>
-                    <td>${inquiry.company || 'N/A'}</td>
-                    <td>${inquiry.email}</td>
-                    <td>${inquiry.phone}</td>
-                    <td>${inquiry.type === 'distributor' ? 'Distributorship' : 'Bulk Order'}</td>
-                    <td>${new Date(inquiry.date).toLocaleDateString()}</td>
-                `;
-                distributorsTableBody.appendChild(row);
-            });
         }
 
         // Close modals when clicking the X
