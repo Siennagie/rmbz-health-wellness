@@ -89,6 +89,7 @@
             border: none;
             cursor: pointer;
             margin-left: 10px;
+            flex-shrink: 0;
         }
 
         .price-btn:hover {
@@ -224,7 +225,15 @@
             width: 100%;
             position: relative;
             z-index: 1;
-            text-align: center;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .hero-btn-container {
+            margin-bottom: 20px;
         }
 
         .hero h1 {
@@ -305,10 +314,12 @@
         .product-buttons {
             display: flex;
             margin-top: 20px;
+            align-items: center;
         }
 
         .product-btn {
             align-self: flex-start;
+            flex-grow: 1;
         }
 
         .doctor-section {
@@ -797,6 +808,8 @@
             
             .hero-content {
                 width: 100%;
+                justify-content: center;
+                align-items: center;
             }
             
             .hero h1 {
@@ -824,6 +837,12 @@
         @media (max-width: 768px) {
             .hero {
                 padding: 150px 0 80px;
+                background-size: cover;
+                background-position: top center;
+            }
+            
+            .hero::before {
+                background: rgba(46, 125, 50, 0.3);
             }
             
             .hero h1 {
@@ -842,6 +861,17 @@
                 grid-template-columns: 1fr;
             }
             
+            .product-buttons {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .price-btn {
+                margin-left: 10px;
+                margin-top: 0;
+                width: auto;
+            }
+            
             .footer-container {
                 grid-template-columns: 1fr;
             }
@@ -854,14 +884,27 @@
                 padding: 12px 20px;
                 font-size: 0.9rem;
             }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 120px 0 60px;
+                min-height: 60vh;
+            }
+            
+            .hero-content {
+                min-height: 300px;
+            }
             
             .product-buttons {
                 flex-direction: column;
+                align-items: stretch;
             }
             
             .price-btn {
                 margin-left: 0;
                 margin-top: 10px;
+                width: 100%;
             }
         }
     </style>
@@ -893,7 +936,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <a href="#products" class="btn">Order Now</a>
+                <div class="hero-btn-container">
+                    <a href="#products" class="btn">Order Now</a>
+                </div>
             </div>
         </div>
     </section>
