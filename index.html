@@ -144,17 +144,20 @@
             font-weight: 700;
             color: var(--primary-green);
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
         }
 
-        .logo span {
-            color: var(--accent-gold);
+        .logo-main {
+            font-size: 1.8rem;
+            line-height: 1;
         }
 
         .logo-sub {
             font-size: 0.8rem;
             color: var(--text-gray);
-            display: block;
-            margin-top: -5px;
+            line-height: 1;
+            margin-top: 2px;
         }
 
         nav ul {
@@ -218,9 +221,10 @@
         }
 
         .hero-content {
-            width: 50%;
+            width: 100%;
             position: relative;
             z-index: 1;
+            text-align: center;
         }
 
         .hero h1 {
@@ -233,7 +237,7 @@
             font-size: 1.3rem;
             color: var(--white);
             max-width: 500px;
-            margin-bottom: 30px;
+            margin: 0 auto 30px;
         }
 
         .featured-products {
@@ -865,7 +869,8 @@
 <body>
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">RMBZ
+            <a href="#" class="logo">
+                <span class="logo-main">RMBZ</span>
                 <span class="logo-sub">Health and Wellness</span>
             </a>
             <button class="mobile-menu-btn">
@@ -888,8 +893,6 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Premium Health Drinks and Supplements</h1>
-                <p>Scientifically formulated to enhance your vitality, energy, and overall well-being.</p>
                 <a href="#products" class="btn">Order Now</a>
             </div>
         </div>
